@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shiatsu Paris 11 | Shiatsu by Anna — Praticienne Shiatsu, Père Lachaise</title>
-<meta name="description" content="Shiatsu à Paris 11, près du Père Lachaise. Anna, praticienne diplômée, propose shiatsu thérapeutique, shiatsu prénatal, moxibustion et ventouses pour soulager le stress, les tensions et les douleurs chroniques. Séances en français et en anglais.">
-<meta name="keywords" content="shiatsu Paris, shiatsu Paris 11, praticienne shiatsu Paris, praticien shiatsu, massage shiatsu Paris, massage bien-être Paris, shiatsu grossesse, shiatsu prénatal Paris, shiatsu enfant, shiatsu personnes âgées, gestion du stress Paris, thérapie anti-stress, moxibustion Paris, ventouses Paris, Do In, acupression Paris, médecine traditionnelle chinoise Paris, shiatsu Ménilmontant, shiatsu Père Lachaise, shiatsu Nation, shiatsu République, bien-être Paris 11, shiatsu anglophone Paris, English speaking shiatsu Paris, séance shiatsu Paris">
+<meta name="description" content="Shiatsu à Paris 11, près du Père Lachaise. Anna, praticienne diplômée, propose shiatsu thérapeutique, stress au travail, santé des femmes (grossesse, post-partum, ménopause), moxibustion et ventouses. Séances en français et en anglais.">
+<meta name="keywords" content="shiatsu Paris, shiatsu Paris 11, praticienne shiatsu Paris, praticien shiatsu, massage shiatsu Paris, massage bien-être Paris, shiatsu grossesse, shiatsu prénatal Paris, shiatsu post-partum, shiatsu ménopause, santé des femmes Paris, shiatsu enfant, shiatsu personnes âgées, stress au travail Paris, gestion du stress Paris, thérapie anti-stress, moxibustion Paris, ventouses Paris, Do In, acupression Paris, médecine traditionnelle chinoise Paris, shiatsu Ménilmontant, shiatsu Père Lachaise, shiatsu Nation, shiatsu République, bien-être Paris 11, shiatsu anglophone Paris, English speaking shiatsu Paris, séance shiatsu Paris">
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="FR-75">
 <meta name="geo.placename" content="Paris">
@@ -69,7 +69,7 @@
     ]
   },
   "sameAs": [],
-  "description": "Séances de Shiatsu thérapeutique et prénatal, moxibustion et ventouses à Paris 11, près du Père Lachaise. Praticienne diplômée du Australian Shiatsu College, séances en français et en anglais."
+  "description": "Séances de Shiatsu thérapeutique à Paris 11, près du Père Lachaise : stress au travail, santé des femmes (grossesse, post-partum, ménopause), moxibustion et ventouses. Praticienne diplômée du Australian Shiatsu College, séances en français et en anglais."
 }
 </script>
 
@@ -138,7 +138,7 @@
     max-width: var(--maxw);
     margin: 0 auto;
   }
-  .nav img{ height: 42px; width:auto; }
+  .nav img{ height: 54px; width:auto; }
   .nav-links{
     display:flex;
     gap: 30px;
@@ -164,6 +164,39 @@
   .nav-cta:hover{ background: var(--teal-deep); border-color: transparent !important; }
   .burger{ display:none; background:none; border:none; cursor:pointer; padding: 6px;}
   .burger span{ display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; }
+
+  .lang-toggle{
+    display:flex;
+    align-items:center;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 2px;
+    margin-left: 8px;
+  }
+  .lang-toggle button{
+    border:none;
+    background:none;
+    font-family:'Work Sans',sans-serif;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 16px;
+    cursor:pointer;
+    color: var(--ink-soft);
+  }
+  .lang-toggle button.active{
+    background: var(--ink);
+    color: var(--white);
+  }
+
+  /* ---------- Language visibility ---------- */
+  .lang-en{ display:none; }
+  body.site-en .lang-fr{ display:none; }
+  body.site-en .lang-en{ display:revert; }
+  body.site-en .lang-en.i-block{ display:block; }
+  body.site-en .lang-en.i-inline{ display:inline; }
+  body.site-en .lang-en.i-flex{ display:flex; }
+  body.site-en .lang-en.i-li{ display:list-item; }
 
   @media (max-width: 860px){
     .nav-links{
@@ -210,13 +243,15 @@
   }
   .hero-watermark{
     position:absolute;
-    right: -30px; bottom: -30px;
-    width: 220px;
-    height: 220px;
+    right: -40px; bottom: -60px;
+    width: 190px;
+    height: 190px;
     opacity: 0.14;
     filter: brightness(0) invert(1);
     pointer-events: none;
+    z-index: 0;
   }
+  .hero-cta{ display:flex; gap:14px; margin-top: 34px; flex-wrap: wrap; position:relative; z-index:1; }
   .eyebrow{
     font-size: 0.95rem;
     color: var(--teal);
@@ -237,7 +272,6 @@
     max-width: 40ch;
     font-size: 1.05rem;
   }
-  .hero-cta{ display:flex; gap:14px; margin-top: 34px; flex-wrap: wrap;}
   .btn{
     display:inline-block;
     padding: 13px 26px;
@@ -581,12 +615,16 @@
   <nav class="nav">
     <a href="#top"><img src="logo-combined.png" alt="Shiatsu by Anna"></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#pourquoi">Pourquoi le Shiatsu</a></li>
-      <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#avis">Avis</a></li>
-      <li><a href="#contact" class="nav-cta">Prendre rendez-vous</a></li>
+      <li><a href="#apropos"><span class="lang-fr">À propos</span><span class="lang-en i-inline">About</span></a></li>
+      <li><a href="#pourquoi"><span class="lang-fr">Pourquoi le Shiatsu</span><span class="lang-en i-inline">Why Shiatsu</span></a></li>
+      <li><a href="#tarifs"><span class="lang-fr">Tarifs</span><span class="lang-en i-inline">Rates</span></a></li>
+      <li><a href="#avis"><span class="lang-fr">Avis</span><span class="lang-en i-inline">Reviews</span></a></li>
+      <li><a href="#contact" class="nav-cta"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en i-inline">Book an appointment</span></a></li>
     </ul>
+    <div class="lang-toggle" role="group" aria-label="Choix de la langue / Language choice">
+      <button type="button" data-lang="fr" class="active" onclick="setLang('fr')">FR</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
     <button class="burger" id="burgerBtn" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -599,12 +637,18 @@
 <section class="hero" style="padding:0;">
   <div class="hero-panel">
     <img class="hero-watermark" src="logo-icon.png" alt="">
-    <div class="eyebrow">Shiatsu à Paris 11</div>
-    <h1>Retrouver l'équilibre, corps et esprit.</h1>
-    <p>Séances de Shiatsu avec Anna, diplômée du Australian Shiatsu College — dans son cabinet du 11e arrondissement.</p>
+    <div class="eyebrow">
+      <span class="lang-fr">Shiatsu à Paris 11</span><span class="lang-en i-inline">Shiatsu in Paris 11</span>
+    </div>
+    <h1>
+      <span class="lang-fr">Retrouver l'équilibre, corps et esprit.</span><span class="lang-en i-inline">Find balance, body and mind.</span>
+    </h1>
+    <p>
+      <span class="lang-fr">Séances avec Shiatsu by Anna, diplômée du Australian Shiatsu College — dans son cabinet du 11e arrondissement.</span><span class="lang-en i-inline">Sessions with Shiatsu by Anna, a graduate of the Australian Shiatsu College — at her practice in the 11th arrondissement.</span>
+    </p>
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
-      <a href="#pourquoi" class="btn btn-ghost">Découvrir le Shiatsu</a>
+      <a href="#contact" class="btn btn-primary"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en i-inline">Book an appointment</span></a>
+      <a href="#pourquoi" class="btn btn-ghost"><span class="lang-fr">Découvrir le Shiatsu</span><span class="lang-en i-inline">Discover Shiatsu</span></a>
     </div>
   </div>
   <div class="hero-photo" role="img" aria-label="Séance de Shiatsu, travail sur le visage et la tête"></div>
@@ -614,7 +658,7 @@
 <section class="quote-section wrap">
   <img class="quote-icon" src="logo-icon.png" alt="">
   <blockquote>
-    « L'art du Shiatsu est une pratique curative qui favorise l'équilibre et l'harmonie. Vous vous reconnecterez à votre corps et découvrirez comment retrouver le bien-être. »
+    <span class="lang-fr">« L'art du Shiatsu est une pratique curative qui favorise l'équilibre et l'harmonie. Vous vous reconnecterez à votre corps et découvrirez comment retrouver le bien-être. »</span><span class="lang-en i-inline">"The art of Shiatsu is a healing practice that nurtures balance and harmony. You will reconnect with your body and discover how to find your way back to wellbeing."</span>
     <span class="quote-by">— Anna</span>
   </blockquote>
 </section>
@@ -629,11 +673,17 @@
         <h2>Shiatsu by Anna</h2>
         <img class="person-mark" src="logo-person.png" alt="">
       </div>
-      <p>Anna pratique le Shiatsu professionnellement depuis l'obtention de son diplôme du <em>Australian Shiatsu College</em> (Diploma in Shiatsu and Oriental Therapies). Elle reçoit aujourd'hui dans son cabinet du 11e arrondissement de Paris, près du Père Lachaise.</p>
-      <p>Elle accompagne toutes les étapes de la vie — femmes enceintes, enfants et personnes âgées — et porte une attention particulière au stress lié au travail, qu'il soit mental ou physique, ainsi qu'aux difficultés émotionnelles.</p>
-      <p>Le Shiatsu est un travail énergétique : il agit sur le champ énergétique autant que sur le corps physique, et relie le corps et l'esprit. Anna échange avec vous sur votre hygiène de vie — alimentation, activités — selon les principes de la médecine chinoise, et vous transmet des exercices et points d'acupression à pratiquer chez vous. Des séances de Do In (auto-massage et exercices) sont également proposées.</p>
+      <p class="lang-fr">Anna pratique le Shiatsu professionnellement depuis l'obtention de son diplôme du <em>Australian Shiatsu College</em> (Diploma in Shiatsu and Oriental Therapies). Elle reçoit aujourd'hui dans son cabinet du 11e arrondissement de Paris, près du Père Lachaise.</p>
+      <p class="lang-en i-block">Anna has been practicing Shiatsu professionally since graduating from the <em>Australian Shiatsu College</em> (Diploma in Shiatsu and Oriental Therapies). She now sees clients at her practice in the 11th arrondissement of Paris, near Père Lachaise.</p>
+      <p class="lang-fr">Elle accompagne toutes les étapes de la vie — grossesse, enfance et années séniors — et porte une attention particulière au stress, qu'il soit mental ou physique, ainsi qu'aux difficultés émotionnelles.</p>
+      <p class="lang-en i-block">She works with all stages of life — including pregnancy, childhood, and the elder years — and pays particular attention to stress, whether mental or physical, as well as emotional difficulties.</p>
+      <p class="lang-fr">Dans son cabinet, Anna porte un intérêt particulier au stress lié au travail, physique et mental, ainsi qu'à la santé des femmes, notamment la ménopause, le post-partum et la grossesse.</p>
+      <p class="lang-en i-block">In her practice, Anna has a particular interest in work-related stress, both physical and mental, as well as women's health, including menopause, postpartum, and pregnancy.</p>
+      <p class="lang-fr">Le Shiatsu est un travail énergétique : il agit sur le champ énergétique autant que sur le corps physique, et relie le corps et l'esprit. Anna échange avec vous sur votre hygiène de vie — alimentation, activités — selon les principes de la médecine chinoise, et vous transmet des exercices et points d'acupression à pratiquer chez vous. Des séances de Do In (auto-massage et exercices) sont également proposées.</p>
+      <p class="lang-en i-block">Shiatsu is energy work: it acts on the body's energetic field as much as on the physical body, connecting body and mind. Anna talks with you about your lifestyle — diet and activities — based on the principles of Chinese medicine, and shows you exercises and acupressure points to practise at home. Do In sessions (self-massage and exercises) are also available.</p>
       <div class="credential">
-        <strong>Anglophone d'origine</strong>, Anna reçoit aussi bien en français qu'en anglais.
+        <span class="lang-fr"><strong>Anglophone d'origine</strong>, Anna reçoit aussi bien en français qu'en anglais.</span>
+        <span class="lang-en i-inline"><strong>A native English speaker</strong>, Anna sees clients in both English and French.</span>
       </div>
     </div>
   </div>
@@ -643,25 +693,38 @@
 <section id="pourquoi">
   <div class="wrap why">
     <div>
-      <div class="section-label">Pourquoi le Shiatsu ?</div>
-      <h2 style="margin-bottom:20px;">Une pratique curative pour le corps et l'esprit</h2>
-      <p>Le Shiatsu est une thérapie japonaise qui combine l'acupression, l'étirement des méridiens et des exercices correctifs, inspirée des principes de la médecine traditionnelle chinoise. Le mot « shiatsu » signifie « pression des doigts » : une pression exercée sur des points précis du corps pour favoriser la circulation du Qi et rétablir l'équilibre énergétique.</p>
-      <p>Le Shiatsu est particulièrement reconnu pour sa capacité à calmer le système nerveux et réduire le stress et l'anxiété, tout en relâchant les tensions musculaires et en stimulant la circulation.</p>
+      <div class="section-label"><span class="lang-fr">Pourquoi le Shiatsu ?</span><span class="lang-en i-inline">Why Shiatsu?</span></div>
+      <h2 style="margin-bottom:20px;">
+        <span class="lang-fr">Une pratique curative pour le corps et l'esprit</span><span class="lang-en i-inline">A healing practice for body and mind</span>
+      </h2>
+      <p class="lang-fr">Le Shiatsu est une thérapie japonaise qui combine l'acupression, l'étirement des méridiens et des exercices correctifs, inspirée des principes de la médecine traditionnelle chinoise. Le mot « shiatsu » signifie « pression des doigts » : une pression exercée sur des points précis du corps pour favoriser la circulation du Qi et rétablir l'équilibre énergétique.</p>
+      <p class="lang-en i-block">Shiatsu is a Japanese therapy that combines acupressure, meridian stretching, and corrective exercises, drawing on the principles of traditional Chinese medicine. The word "shiatsu" means "finger pressure": pressure applied to precise points on the body to encourage the flow of Qi and restore energetic balance.</p>
+      <p class="lang-fr">Le Shiatsu est particulièrement reconnu pour sa capacité à calmer le système nerveux et réduire le stress et l'anxiété, tout en relâchant les tensions musculaires et en stimulant la circulation.</p>
+      <p class="lang-en i-block">Shiatsu is especially well known for calming the nervous system and reducing stress and anxiety, while releasing muscle tension and improving circulation.</p>
       <div class="add-on-note">
-        En complément, la moxibustion et les ventouses peuvent être proposées pendant votre séance pour approfondir la détente et stimuler le flux énergétique.
+        <span class="lang-fr">En complément, la moxibustion et les ventouses peuvent être proposées pendant votre séance pour approfondir la détente et stimuler le flux énergétique.</span>
+        <span class="lang-en i-inline">Moxibustion and cupping can also be offered during your session to deepen relaxation and stimulate energy flow.</span>
       </div>
     </div>
     <div>
-      <h3 class="benefits-heading">Les bienfaits du Shiatsu</h3>
+      <h3 class="benefits-heading"><span class="lang-fr">Les bienfaits du Shiatsu</span><span class="lang-en i-inline">The benefits of Shiatsu</span></h3>
       <ul>
-      <li>Redonne de la vitalité</li>
-      <li>Renforce et stimule le système immunitaire</li>
-      <li>Soulage et réduit les tensions dans le corps</li>
-      <li>Réduit le stress, l'anxiété et les douleurs chroniques</li>
-      <li>Stimule la circulation sanguine</li>
-      <li>Améliore le sommeil</li>
-      <li>Réduit la fatigue</li>
-      <li>Améliore la digestion</li>
+      <li class="lang-fr">Redonne de la vitalité</li>
+      <li class="lang-en i-li">Restores vitality</li>
+      <li class="lang-fr">Renforce et stimule le système immunitaire</li>
+      <li class="lang-en i-li">Strengthens and stimulates the immune system</li>
+      <li class="lang-fr">Soulage et réduit les tensions dans le corps</li>
+      <li class="lang-en i-li">Relieves and reduces tension in the body</li>
+      <li class="lang-fr">Réduit le stress, l'anxiété et les douleurs chroniques</li>
+      <li class="lang-en i-li">Reduces stress, anxiety, and chronic pain</li>
+      <li class="lang-fr">Stimule la circulation sanguine</li>
+      <li class="lang-en i-li">Boosts blood circulation</li>
+      <li class="lang-fr">Améliore le sommeil</li>
+      <li class="lang-en i-li">Improves sleep</li>
+      <li class="lang-fr">Réduit la fatigue</li>
+      <li class="lang-en i-li">Reduces fatigue</li>
+      <li class="lang-fr">Améliore la digestion</li>
+      <li class="lang-en i-li">Improves digestion</li>
       </ul>
     </div>
   </div>
@@ -671,53 +734,57 @@
 <section id="tarifs" class="pricing-section">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-label">Tarifs</div>
-      <h2>Séances au cabinet, Paris 11</h2>
+      <div class="section-label"><span class="lang-fr">Tarifs</span><span class="lang-en i-inline">Rates</span></div>
+      <h2><span class="lang-fr">Séances au cabinet, Paris 11</span><span class="lang-en i-inline">Sessions at the practice, Paris 11</span></h2>
     </div>
 
     <div class="price-list">
       <div class="price-row">
         <div>
-          <div class="price-name">Première séance de Shiatsu</div>
-          <span class="price-meta">1h15, consultation comprise</span>
+          <div class="price-name"><span class="lang-fr">Première séance de Shiatsu</span><span class="lang-en i-inline">First Shiatsu session</span></div>
+          <span class="price-meta"><span class="lang-fr">1h15, consultation comprise</span><span class="lang-en i-inline">1h15, consultation included</span></span>
         </div>
         <div class="price-amount">65 €</div>
       </div>
       <div class="price-row">
         <div>
-          <div class="price-name">Séance de Shiatsu</div>
-          <span class="price-meta">1h15, consultation comprise</span>
+          <div class="price-name"><span class="lang-fr">Séance de Shiatsu</span><span class="lang-en i-inline">Shiatsu session</span></div>
+          <span class="price-meta"><span class="lang-fr">1h15, consultation comprise</span><span class="lang-en i-inline">1h15, consultation included</span></span>
         </div>
         <div class="price-amount">70 €</div>
       </div>
       <div class="price-row">
         <div>
-          <div class="price-name">Séance de Shiatsu</div>
-          <span class="price-meta">1h45, consultation comprise</span>
+          <div class="price-name"><span class="lang-fr">Séance de Shiatsu</span><span class="lang-en i-inline">Shiatsu session</span></div>
+          <span class="price-meta"><span class="lang-fr">1h45, consultation comprise</span><span class="lang-en i-inline">1h45, consultation included</span></span>
         </div>
         <div class="price-amount">85 €</div>
       </div>
     </div>
 
     <div class="offer-box">
-      <strong>Offre —</strong> 5 séances de Shiatsu pour 325 €. Valable pour 6 mois.
+      <span class="lang-fr"><strong>Offre —</strong> 5 séances de Shiatsu pour 325 €. Valable pour 6 mois.</span>
+      <span class="lang-en i-inline"><strong>Offer —</strong> 5 Shiatsu sessions for €325. Valid for 6 months.</span>
     </div>
 
     <div class="addons">
       <div class="addon-item">
         <h3>Moxibustion</h3>
-        <span>15 min — 15 €</span>
+        <span class="lang-fr">15 min — 15 €</span>
+        <span class="lang-en i-inline">15 min — €15</span>
       </div>
       <div class="addon-item">
-        <h3>Ventouses</h3>
-        <span>15 min — 15 €</span>
+        <h3><span class="lang-fr">Ventouses</span><span class="lang-en i-inline">Cupping</span></h3>
+        <span class="lang-fr">15 min — 15 €</span>
+        <span class="lang-en i-inline">15 min — €15</span>
       </div>
     </div>
 
-    <p class="price-note">La moxibustion et les ventouses sont discutées lors de la consultation et proposées si elles conviennent à vos besoins. Pour en bénéficier en complément d'une séance d'une heure, un supplément de temps peut être ajouté, selon disponibilité.</p>
+    <p class="price-note lang-fr">La moxibustion et les ventouses sont discutées lors de la consultation et proposées si elles conviennent à vos besoins. Pour en bénéficier en complément d'une séance d'une heure, un supplément de temps peut être ajouté, selon disponibilité.</p>
+    <p class="price-note lang-en i-block">Moxibustion and cupping are discussed during the consultation and offered if they suit your needs. To add them on top of a one-hour session, extra time can be booked, subject to availability.</p>
 
     <div class="pricing-cta">
-      <a href="#contact" class="btn btn-dark">Prendre rendez-vous</a>
+      <a href="#contact" class="btn btn-dark"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en i-inline">Book an appointment</span></a>
     </div>
   </div>
 </section>
@@ -728,8 +795,8 @@
     <img class="avis-photo" src="hero-photo.jpg" alt="Séance de Shiatsu, travail sur le visage et la tête">
     <div>
       <div class="section-head">
-        <div class="section-label">Avis</div>
-        <h2>Ce qu'en disent les clients</h2>
+        <div class="section-label"><span class="lang-fr">Avis</span><span class="lang-en i-inline">Reviews</span></div>
+        <h2><span class="lang-fr">Ce qu'en disent les clients</span><span class="lang-en i-inline">What clients say</span></h2>
       </div>
       <div class="testimonial-row">
         <div class="t-card">
@@ -767,7 +834,7 @@
   <div class="wrap contact-grid">
     <div>
       <div class="section-label">Contact</div>
-      <h2 style="margin-bottom: 30px;">Prendre rendez-vous</h2>
+      <h2 style="margin-bottom: 30px;"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en i-inline">Book an appointment</span></h2>
 
       <div class="info-block">
         <div class="info-label">Téléphone / WhatsApp</div>
@@ -783,21 +850,24 @@
       </div>
 
       <div class="info-block">
-        <div class="info-label">Cabinet</div>
+        <div class="info-label"><span class="lang-fr">Cabinet</span><span class="lang-en i-inline">Practice</span></div>
         <div class="info-value">59 Boulevard de Ménilmontant<br>75011 Paris — Père Lachaise</div>
       </div>
 
       <div class="info-block">
-        <div class="info-label">Horaires</div>
+        <div class="info-label"><span class="lang-fr">Horaires</span><span class="lang-en i-inline">Hours</span></div>
         <table class="hours-table">
-          <tr><td>Lundi</td><td>10h – 15h</td></tr>
-          <tr><td>Mercredi</td><td>13h – 19h</td></tr>
-          <tr><td>Vendredi</td><td>10h – 15h</td></tr>
-          <tr><td>Samedi</td><td>9h – 11h</td></tr>
+          <tr><td><span class="lang-fr">Lundi</span><span class="lang-en i-inline">Monday</span></td><td>10h – 15h</td></tr>
+          <tr><td><span class="lang-fr">Mercredi</span><span class="lang-en i-inline">Wednesday</span></td><td>13h – 19h</td></tr>
+          <tr><td><span class="lang-fr">Vendredi</span><span class="lang-en i-inline">Friday</span></td><td>10h – 15h</td></tr>
+          <tr><td><span class="lang-fr">Samedi</span><span class="lang-en i-inline">Saturday</span></td><td>9h – 11h</td></tr>
         </table>
       </div>
 
-      <div class="lang-note">Anglophone d'origine — Anna reçoit en français et en anglais.</div>
+      <div class="lang-note">
+        <span class="lang-fr">Anglophone d'origine — Anna reçoit en français et en anglais.</span>
+        <span class="lang-en i-inline">A native English speaker — Anna sees clients in both English and French.</span>
+      </div>
 
       <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps?q=59+Boulevard+de+M%C3%A9nilmontant,+75011+Paris&output=embed"></iframe>
@@ -806,8 +876,8 @@
     <div>
       <form class="contact-form" id="contactForm">
         <div>
-          <label for="cf-name">Nom</label>
-          <input type="text" id="cf-name" name="name" placeholder="Votre nom" required>
+          <label for="cf-name"><span class="lang-fr">Nom</span><span class="lang-en i-inline">Name</span></label>
+          <input type="text" id="cf-name" name="name" placeholder="Votre nom" data-placeholder-en="Your name" required>
         </div>
         <div>
           <label for="cf-email">Email</label>
@@ -815,10 +885,11 @@
         </div>
         <div>
           <label for="cf-message">Message</label>
-          <textarea id="cf-message" name="message" placeholder="Dites-nous quels jours vous conviennent, et ce que vous recherchez..."></textarea>
+          <textarea id="cf-message" name="message" placeholder="Dites-nous quels jours vous conviennent, et ce que vous recherchez..." data-placeholder-en="Let us know which days suit you, and what you're looking for..."></textarea>
         </div>
-        <p class="form-note">L'envoi ouvre votre messagerie, adressée à shiatsubyanna@gmail.com.</p>
-        <button type="submit" class="btn btn-primary">Envoyer</button>
+        <p class="form-note lang-fr">L'envoi ouvre votre messagerie, adressée à shiatsubyanna@gmail.com.</p>
+        <p class="form-note lang-en i-block">Sending this opens your email app, addressed to shiatsubyanna@gmail.com.</p>
+        <button type="submit" class="btn btn-primary"><span class="lang-fr">Envoyer</span><span class="lang-en i-inline">Send</span></button>
       </form>
     </div>
   </div>
@@ -826,8 +897,11 @@
 
 <footer>
   <div class="wrap">
-    <p style="font-size:0.85rem; color:rgba(251,249,245,0.5); max-width:70ch; margin-bottom:20px;">
+    <p style="font-size:0.85rem; color:rgba(251,249,245,0.5); max-width:70ch; margin-bottom:20px;" class="lang-fr">
       Shiatsu à Paris 11, entre République et Père Lachaise — shiatsu thérapeutique, shiatsu prénatal (grossesse), shiatsu pour enfants, gestion du stress et des tensions, moxibustion, ventouses et Do In, selon les principes de la médecine traditionnelle chinoise.
+    </p>
+    <p style="font-size:0.85rem; color:rgba(251,249,245,0.5); max-width:70ch; margin-bottom:20px;" class="lang-en i-block">
+      Shiatsu in Paris 11, between République and Père Lachaise — therapeutic Shiatsu, prenatal Shiatsu (pregnancy), Shiatsu for children, stress and tension relief, moxibustion, cupping and Do In, based on the principles of traditional Chinese medicine.
     </p>
   </div>
   <div class="wrap footer-wrap">
@@ -844,13 +918,34 @@
   burger.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
+  const placeholderEls = document.querySelectorAll('[data-placeholder-en]');
+  const originalPlaceholders = new Map();
+  placeholderEls.forEach(el => originalPlaceholders.set(el, el.getAttribute('placeholder')));
+
+  function setLang(lang){
+    document.body.classList.toggle('site-en', lang === 'en');
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    placeholderEls.forEach(el => {
+      el.setAttribute('placeholder', lang === 'en' ? el.dataset.placeholderEn : originalPlaceholders.get(el));
+    });
+    try { localStorage.setItem('shiatsu-lang', lang); } catch(e){}
+  }
+  try {
+    const saved = localStorage.getItem('shiatsu-lang');
+    if (saved === 'en') setLang('en');
+  } catch(e){}
+
   document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
     const name = document.getElementById('cf-name').value;
     const email = document.getElementById('cf-email').value;
     const message = document.getElementById('cf-message').value;
-    const subject = encodeURIComponent('Demande de rendez-vous — ' + name);
-    const body = encodeURIComponent(message + '\n\nEmail de contact : ' + email);
+    const isEn = document.body.classList.contains('site-en');
+    const subject = encodeURIComponent((isEn ? 'Appointment request — ' : 'Demande de rendez-vous — ') + name);
+    const body = encodeURIComponent(message + (isEn ? '\n\nContact email: ' : '\n\nEmail de contact : ') + email);
     window.location.href = 'mailto:shiatsubyanna@gmail.com?subject=' + subject + '&body=' + body;
   });
 </script>
