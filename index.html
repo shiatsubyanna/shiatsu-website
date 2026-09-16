@@ -236,22 +236,26 @@
   .hero-panel::after{
     content:"";
     position:absolute;
-    right:-90px; bottom:-90px;
-    width:280px; height:280px;
+    left:-70px; top:-70px;
+    width:220px; height:220px;
     border-radius:50%;
     border: 1px solid rgba(255,255,255,0.08);
   }
-  .hero-title-row{
-    display:flex;
-    align-items:center;
-    gap: 18px;
+  .hero-content{
+    position:relative;
+    z-index:0;
   }
-  .hero-icon{
-    width: 56px;
-    height: 56px;
-    flex-shrink: 0;
+  .hero-watermark{
+    position:absolute;
+    left:50%; top:50%;
+    transform: translate(-50%,-50%);
+    width: 380px;
+    height: 380px;
+    max-width: 100%;
+    opacity: 0.07;
     filter: brightness(0) invert(1);
-    opacity: 0.9;
+    pointer-events: none;
+    z-index: -1;
   }
   .hero-cta{ display:flex; gap:14px; margin-top: 34px; flex-wrap: wrap; position:relative; z-index:1; }
   .eyebrow{
@@ -638,21 +642,21 @@
 <!-- HERO -->
 <section class="hero" style="padding:0;">
   <div class="hero-panel">
-    <div class="eyebrow">
-      <span class="lang-fr">Shiatsu à Paris 11</span><span class="lang-en i-inline">Shiatsu in Paris 11</span>
-    </div>
-    <div class="hero-title-row">
+    <div class="hero-content">
+      <img class="hero-watermark" src="logo-icon.png" alt="">
+      <div class="eyebrow">
+        <span class="lang-fr">Shiatsu à Paris 11</span><span class="lang-en i-inline">Shiatsu in Paris 11</span>
+      </div>
       <h1>
         <span class="lang-fr">Retrouver l'équilibre, corps et esprit.</span><span class="lang-en i-inline">Find balance, body and mind.</span>
       </h1>
-      <img class="hero-icon" src="logo-icon.png" alt="">
-    </div>
-    <p>
-      <span class="lang-fr">Séances avec Shiatsu by Anna, diplômée du Australian Shiatsu College — dans son cabinet du 11e arrondissement.</span><span class="lang-en i-inline">Sessions with Shiatsu by Anna, a graduate of the Australian Shiatsu College — at her practice in the 11th arrondissement.</span>
-    </p>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en i-inline">Book an appointment</span></a>
-      <a href="#pourquoi" class="btn btn-ghost"><span class="lang-fr">Découvrir le Shiatsu</span><span class="lang-en i-inline">Discover Shiatsu</span></a>
+      <p>
+        <span class="lang-fr">Séances avec Shiatsu by Anna, diplômée du Australian Shiatsu College — dans son cabinet du 11e arrondissement.</span><span class="lang-en i-inline">Sessions with Shiatsu by Anna, a graduate of the Australian Shiatsu College — at her practice in the 11th arrondissement.</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en i-inline">Book an appointment</span></a>
+        <a href="#pourquoi" class="btn btn-ghost"><span class="lang-fr">Découvrir le Shiatsu</span><span class="lang-en i-inline">Discover Shiatsu</span></a>
+      </div>
     </div>
   </div>
   <div class="hero-photo" role="img" aria-label="Séance de Shiatsu, travail sur le visage et la tête"></div>
