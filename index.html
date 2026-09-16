@@ -73,6 +73,45 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Faut-il se déshabiller pendant la séance ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Non, le Shiatsu se pratique habillé, dans des vêtements souples et confortables."}
+    },
+    {
+      "@type": "Question",
+      "name": "Que dois-je porter ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Des vêtements amples et confortables qui permettent de bouger librement — une tenue de sport convient très bien."}
+    },
+    {
+      "@type": "Question",
+      "name": "C'est ma première séance, à quoi dois-je m'attendre ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "La première séance inclut une consultation pour comprendre vos besoins, suivie d'une séance de Shiatsu adaptée. Elle dure 1h15 au total."}
+    },
+    {
+      "@type": "Question",
+      "name": "Le Shiatsu est-il sans danger pendant la grossesse ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Oui, le Shiatsu prénatal est adapté à chaque étape de la grossesse. Anna accompagne régulièrement des femmes enceintes."}
+    },
+    {
+      "@type": "Question",
+      "name": "À quelle fréquence dois-je venir ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de vos besoins, mais des séances régulières — par exemple une fois par mois — favorisent un équilibre durable."}
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est votre politique d'annulation ?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Merci de prévenir au moins 24h à l'avance en cas d'empêchement, par téléphone, WhatsApp ou email."}
+    }
+  ]
+}
+</script>
+
 <style>
 
   :root{
@@ -519,6 +558,42 @@
   .t-name{ font-size: 0.9rem; color: var(--ink-soft); font-family:'Shippori Mincho',serif; }
   .stars{ color: var(--teal-deep); font-size: 0.85rem; margin-bottom: 10px; letter-spacing: 2px;}
 
+  /* ---------- FAQ ---------- */
+  .faq-list{ max-width: 760px; }
+  .faq-item{
+    border-bottom: 1px solid var(--line);
+  }
+  .faq-item summary{
+    list-style: none;
+    cursor: pointer;
+    padding: 22px 34px 22px 0;
+    font-family:'Shippori Mincho',serif;
+    font-size: 1.08rem;
+    color: var(--ink);
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content: "+";
+    position: absolute;
+    right: 4px;
+    top: 20px;
+    font-family:'Work Sans',sans-serif;
+    font-size: 1.3rem;
+    color: var(--teal-deep);
+    transition: transform .2s ease;
+  }
+  .faq-item[open] summary::after{
+    transform: rotate(45deg);
+  }
+  .faq-item p{
+    padding: 0 34px 22px 0;
+    margin: -8px 0 0 0;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+
   /* ---------- Contact ---------- */
   .contact-section{
     background: var(--ink);
@@ -625,6 +700,7 @@
       <li><a href="#pourquoi"><span class="lang-fr">Pourquoi le Shiatsu</span><span class="lang-en i-inline">Why Shiatsu</span></a></li>
       <li><a href="#tarifs"><span class="lang-fr">Tarifs</span><span class="lang-en i-inline">Rates</span></a></li>
       <li><a href="#avis"><span class="lang-fr">Avis</span><span class="lang-en i-inline">Reviews</span></a></li>
+      <li><a href="#faq"><span class="lang-fr">FAQ</span><span class="lang-en i-inline">FAQ</span></a></li>
       <li><a href="#contact" class="nav-cta"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en i-inline">Book an appointment</span></a></li>
     </ul>
     <div class="lang-toggle" role="group" aria-label="Choix de la langue / Language choice">
@@ -833,6 +909,55 @@
           <div class="t-name">Brooke Feldman</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label"><span class="lang-fr">Questions fréquentes</span><span class="lang-en i-inline">FAQ</span></div>
+      <h2><span class="lang-fr">Vous avez des questions ?</span><span class="lang-en i-inline">Have questions?</span></h2>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary><span class="lang-fr">Faut-il se déshabiller pendant la séance ?</span><span class="lang-en i-inline">Do I need to undress for the session?</span></summary>
+        <p class="lang-fr">Non, le Shiatsu se pratique habillé, dans des vêtements souples et confortables.</p>
+        <p class="lang-en i-block">No, Shiatsu is practiced fully clothed, in loose, comfortable clothing.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="lang-fr">Que dois-je porter ?</span><span class="lang-en i-inline">What should I wear?</span></summary>
+        <p class="lang-fr">Des vêtements amples et confortables qui permettent de bouger librement — une tenue de sport convient très bien.</p>
+        <p class="lang-en i-block">Loose, comfortable clothing that allows you to move freely — sportswear works well.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="lang-fr">C'est ma première séance, à quoi dois-je m'attendre ?</span><span class="lang-en i-inline">What can I expect from my first session?</span></summary>
+        <p class="lang-fr">La première séance inclut une consultation pour comprendre vos besoins, suivie d'une séance de Shiatsu adaptée. Elle dure 1h15 au total.</p>
+        <p class="lang-en i-block">Your first session includes a consultation to understand your needs, followed by a tailored Shiatsu session. It lasts 1h15 in total.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="lang-fr">Le Shiatsu est-il sans danger pendant la grossesse ?</span><span class="lang-en i-inline">Is Shiatsu safe during pregnancy?</span></summary>
+        <p class="lang-fr">Oui, le Shiatsu prénatal est adapté à chaque étape de la grossesse. Anna accompagne régulièrement des femmes enceintes.</p>
+        <p class="lang-en i-block">Yes, prenatal Shiatsu is adapted to each stage of pregnancy. Anna regularly works with pregnant clients.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="lang-fr">À quelle fréquence dois-je venir ?</span><span class="lang-en i-inline">How often should I come?</span></summary>
+        <p class="lang-fr">Cela dépend de vos besoins, mais des séances régulières — par exemple une fois par mois — favorisent un équilibre durable.</p>
+        <p class="lang-en i-block">This depends on your needs, but regular sessions — for example, once a month — support lasting balance.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="lang-fr">Quelle est votre politique d'annulation ?</span><span class="lang-en i-inline">What is your cancellation policy?</span></summary>
+        <p class="lang-fr">Merci de prévenir au moins 24h à l'avance en cas d'empêchement, par téléphone, WhatsApp ou email.</p>
+        <p class="lang-en i-block">Please give at least 24 hours' notice if you need to cancel, by phone, WhatsApp, or email.</p>
+      </details>
+
     </div>
   </div>
 </section>
