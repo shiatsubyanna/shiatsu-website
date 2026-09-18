@@ -1,0 +1,507 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Questionnaire Shiatsu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F1;
+    --surface: #FFFFFF;
+    --text: #2B2A26;
+    --text-muted: #6E6759;
+    --border: #E4DECE;
+    --accent: #6C8863;
+    --accent-dark: #4F6748;
+    --accent-tint: #EEF2EA;
+    --danger: #B4614A;
+    --radius: 14px;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1E211B;
+      --surface: #262A22;
+      --text: #EDE8DC;
+      --text-muted: #AFA895;
+      --border: #3B4033;
+      --accent: #9CB78F;
+      --accent-dark: #7D9A70;
+      --accent-tint: #2E3327;
+      --danger: #D68C77;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1E211B;
+    --surface: #262A22;
+    --text: #EDE8DC;
+    --text-muted: #AFA895;
+    --border: #3B4033;
+    --accent: #9CB78F;
+    --accent-dark: #7D9A70;
+    --accent-tint: #2E3327;
+    --danger: #D68C77;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 28px 16px 60px;
+  }
+  .wrap {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  header {
+    margin-bottom: 22px;
+  }
+  .brand {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--accent-dark);
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+  }
+  .brand-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0 0 16px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 21px;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+  .intro {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  form {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .field {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+  }
+  .field.compact {
+    padding: 14px 16px;
+  }
+  .row-2 {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .row-2 .field { flex: 1 1 200px; }
+
+  label.q {
+    display: block;
+    font-size: 14.5px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .q-num {
+    color: var(--accent-dark);
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  label.simple {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  input[type="text"], input[type="date"], input[type="tel"], textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 10px 12px;
+    resize: vertical;
+  }
+  input:focus, textarea:focus, .pill:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+  textarea { min-height: 56px; }
+
+  .choices {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .pill-group input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+  }
+  .pill-group input[type="radio"]:checked + .pill {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .detail {
+    margin-top: 10px;
+  }
+  .detail textarea, .detail input { margin-top: 0; }
+
+  .consent {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .consent input {
+    margin-top: 3px;
+    width: 17px;
+    height: 17px;
+    accent-color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  button {
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px 18px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  #send-whatsapp {
+    background: var(--accent);
+    color: #fff;
+  }
+  #send-whatsapp:hover { background: var(--accent-dark); }
+  #send-email {
+    background: transparent;
+    color: var(--accent-dark);
+    border-color: var(--border);
+  }
+  .hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0;
+  }
+  .status {
+    font-size: 13px;
+    color: var(--danger);
+    text-align: center;
+    margin: 0;
+  }
+  footer {
+    margin-top: 26px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="brand">Shiatsu by Anna</p>
+    <p class="brand-sub">59 Boulevard de M&eacute;nilmontant, 75011 Paris</p>
+    <h1>Questionnaire de sant&eacute;</h1>
+    <p class="intro">&Agrave; compl&eacute;ter avant votre s&eacute;ance. Ces informations restent confidentielles et m'aident &agrave; adapter la s&eacute;ance &agrave; vos besoins.</p>
+  </header>
+
+  <form id="qform">
+    <div class="row-2">
+      <div class="field compact">
+        <label class="simple" for="f-name">Nom</label>
+        <input type="text" id="f-name" required autocomplete="name">
+      </div>
+      <div class="field compact">
+        <label class="simple" for="f-date">Date</label>
+        <input type="date" id="f-date">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q1-oui"><span class="q-num">1.</span>Avez-vous d&eacute;j&agrave; re&ccedil;u un traitement de shiatsu auparavant&nbsp;?</label>
+      <div class="choices pill-group">
+        <input type="radio" name="q1" id="q1-oui" value="Oui"><label class="pill" for="q1-oui">Oui</label>
+        <input type="radio" name="q1" id="q1-non" value="Non"><label class="pill" for="q1-non">Non</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q2"><span class="q-num">2.</span>Quelle est la raison de votre venue&nbsp;/ le motif de cette s&eacute;ance de shiatsu&nbsp;?</label>
+      <textarea id="q2" rows="2"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q3-oui"><span class="q-num">3.</span>Ressentez-vous actuellement des douleurs dans le corps&nbsp;?</label>
+      <div class="choices pill-group">
+        <input type="radio" name="q3" id="q3-oui" value="Oui"><label class="pill" for="q3-oui">Oui</label>
+        <input type="radio" name="q3" id="q3-non" value="Non"><label class="pill" for="q3-non">Non</label>
+      </div>
+      <div class="detail" id="q3-detail" hidden>
+        <textarea id="q3-where" rows="2" placeholder="Si oui, o&ugrave;&nbsp;?"></textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q4-oui"><span class="q-num">4.</span>Avez-vous des blessures ou s&eacute;quelles qui affectent encore votre vie quotidienne&nbsp;?</label>
+      <div class="choices pill-group">
+        <input type="radio" name="q4" id="q4-oui" value="Oui"><label class="pill" for="q4-oui">Oui</label>
+        <input type="radio" name="q4" id="q4-non" value="Non"><label class="pill" for="q4-non">Non</label>
+      </div>
+      <div class="detail" id="q4-detail" hidden>
+        <textarea id="q4-detail-text" rows="2" placeholder="Pr&eacute;cisions"></textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q5-oui"><span class="q-num">5.</span>&Ecirc;tes-vous &agrave; l'aise avec le fait que votre corps soit &eacute;tir&eacute;&nbsp;/ mobilis&eacute; pendant la s&eacute;ance&nbsp;?</label>
+      <div class="choices pill-group">
+        <input type="radio" name="q5" id="q5-oui" value="Oui"><label class="pill" for="q5-oui">Oui</label>
+        <input type="radio" name="q5" id="q5-non" value="Non"><label class="pill" for="q5-non">Non</label>
+        <input type="radio" name="q5" id="q5-part" value="Partiellement"><label class="pill" for="q5-part">Partiellement</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q6-oui"><span class="q-num">6.</span>&Ecirc;tes-vous enceinte&nbsp;?</label>
+      <div class="choices pill-group">
+        <input type="radio" name="q6" id="q6-oui" value="Oui"><label class="pill" for="q6-oui">Oui</label>
+        <input type="radio" name="q6" id="q6-non" value="Non"><label class="pill" for="q6-non">Non</label>
+      </div>
+      <div class="detail" id="q6-detail" hidden>
+        <input type="text" id="q6-weeks" placeholder="Si oui, &agrave; combien de semaines&nbsp;?">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q7-oui"><span class="q-num">7.</span>Avez-vous des probl&egrave;mes de sant&eacute; chroniques (diab&egrave;te, probl&egrave;mes cardiaques, &eacute;pilepsie, ost&eacute;oporose, hypertension, etc.)&nbsp;?</label>
+      <div class="choices pill-group">
+        <input type="radio" name="q7" id="q7-oui" value="Oui"><label class="pill" for="q7-oui">Oui</label>
+        <input type="radio" name="q7" id="q7-non" value="Non"><label class="pill" for="q7-non">Non</label>
+      </div>
+      <div class="detail" id="q7-detail" hidden>
+        <textarea id="q7-detail-text" rows="2" placeholder="Pr&eacute;cisions"></textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q8-oui"><span class="q-num">8.</span>Prenez-vous actuellement des m&eacute;dicaments&nbsp;?</label>
+      <div class="choices pill-group">
+        <input type="radio" name="q8" id="q8-oui" value="Oui"><label class="pill" for="q8-oui">Oui</label>
+        <input type="radio" name="q8" id="q8-non" value="Non"><label class="pill" for="q8-non">Non</label>
+      </div>
+      <div class="detail" id="q8-detail" hidden>
+        <textarea id="q8-detail-text" rows="2" placeholder="Lesquels"></textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q9-oui"><span class="q-num">9.</span>Avez-vous subi une op&eacute;ration r&eacute;cente&nbsp;?</label>
+      <div class="choices pill-group">
+        <input type="radio" name="q9" id="q9-oui" value="Oui"><label class="pill" for="q9-oui">Oui</label>
+        <input type="radio" name="q9" id="q9-non" value="Non"><label class="pill" for="q9-non">Non</label>
+      </div>
+      <div class="detail" id="q9-detail" hidden>
+        <textarea id="q9-detail-text" rows="2" placeholder="Pr&eacute;cisions"></textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q10-oui"><span class="q-num">10.</span>Avez-vous des varices, phl&eacute;bites ou ecchymoses (bleus) r&eacute;centes&nbsp;?</label>
+      <div class="choices pill-group">
+        <input type="radio" name="q10" id="q10-oui" value="Oui"><label class="pill" for="q10-oui">Oui</label>
+        <input type="radio" name="q10" id="q10-non" value="Non"><label class="pill" for="q10-non">Non</label>
+      </div>
+      <div class="detail" id="q10-detail" hidden>
+        <textarea id="q10-detail-text" rows="2" placeholder="Pr&eacute;cisions"></textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="q11"><span class="q-num">11.</span>Y a-t-il des zones du corps que vous pr&eacute;f&eacute;rez ne pas voir touch&eacute;es&nbsp;?</label>
+      <textarea id="q11" rows="2"></textarea>
+    </div>
+
+    <div class="field compact">
+      <label class="simple" for="q12">Contact d'urgence (t&eacute;l&eacute;phone)</label>
+      <input type="tel" id="q12" autocomplete="tel">
+    </div>
+
+    <label class="consent">
+      <input type="checkbox" id="consent" required>
+      <span>Je confirme que les informations ci-dessus sont exactes et je comprends que le shiatsu ne remplace pas un avis m&eacute;dical.</span>
+    </label>
+
+    <div class="actions">
+      <button type="button" id="send-whatsapp">Envoyer par WhatsApp</button>
+      <button type="button" id="send-email">Envoyer par e-mail</button>
+      <p class="status" id="status" hidden></p>
+      <p class="hint">Vos r&eacute;ponses seront pr&eacute;-remplies dans le message &mdash; il ne vous restera qu'&agrave; appuyer sur envoyer.</p>
+    </div>
+  </form>
+
+  <footer>Shiatsu by Anna &middot; 07 51 49 28 94 &middot; shiatsubyanna@gmail.com</footer>
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById('qform');
+  var statusEl = document.getElementById('status');
+
+  function wireToggle(radioNamePrefix, oui, detailId) {
+    var ouiInput = document.getElementById(oui);
+    var detail = document.getElementById(detailId);
+    if (!ouiInput || !detail) return;
+    document.getElementsByName(radioNamePrefix).forEach(function (r) {
+      r.addEventListener('change', function () {
+        detail.hidden = !ouiInput.checked;
+      });
+    });
+  }
+  wireToggle('q3', 'q3-oui', 'q3-detail');
+  wireToggle('q4', 'q4-oui', 'q4-detail');
+  wireToggle('q6', 'q6-oui', 'q6-detail');
+  wireToggle('q7', 'q7-oui', 'q7-detail');
+  wireToggle('q8', 'q8-oui', 'q8-detail');
+  wireToggle('q9', 'q9-oui', 'q9-detail');
+  wireToggle('q10', 'q10-oui', 'q10-detail');
+
+  function radioValue(name) {
+    var el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+  function val(id) {
+    var el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+  function line(label, value) {
+    return value ? (label + ' ' + value) : (label + ' —');
+  }
+
+  function buildMessage() {
+    var name = val('f-name');
+    var date = val('f-date') || new Date().toLocaleDateString('fr-FR');
+    var q1 = radioValue('q1');
+    var q3 = radioValue('q3');
+    var q3where = val('q3-where');
+    var q4 = radioValue('q4');
+    var q4d = val('q4-detail-text');
+    var q5 = radioValue('q5');
+    var q6 = radioValue('q6');
+    var q6w = val('q6-weeks');
+    var q7 = radioValue('q7');
+    var q7d = val('q7-detail-text');
+    var q8 = radioValue('q8');
+    var q8d = val('q8-detail-text');
+    var q9 = radioValue('q9');
+    var q9d = val('q9-detail-text');
+    var q10 = radioValue('q10');
+    var q10d = val('q10-detail-text');
+
+    var lines = [];
+    lines.push('Questionnaire de sante - Shiatsu by Anna');
+    lines.push('Nom : ' + (name || '—'));
+    lines.push('Date : ' + date);
+    lines.push('');
+    lines.push('1. Deja recu un shiatsu : ' + (q1 || '—'));
+    lines.push('2. Raison de la seance : ' + (val('q2') || '—'));
+    lines.push('3. Douleurs actuelles : ' + (q3 || '—') + (q3 === 'Oui' && q3where ? ' (' + q3where + ')' : ''));
+    lines.push('4. Blessures / sequelles : ' + (q4 || '—') + (q4 === 'Oui' && q4d ? ' (' + q4d + ')' : ''));
+    lines.push('5. A l\'aise avec les etirements : ' + (q5 || '—'));
+    lines.push('6. Enceinte : ' + (q6 || '—') + (q6 === 'Oui' && q6w ? ' (' + q6w + ' semaines)' : ''));
+    lines.push('7. Problemes de sante chroniques : ' + (q7 || '—') + (q7 === 'Oui' && q7d ? ' (' + q7d + ')' : ''));
+    lines.push('8. Medicaments actuels : ' + (q8 || '—') + (q8 === 'Oui' && q8d ? ' (' + q8d + ')' : ''));
+    lines.push('9. Operation recente : ' + (q9 || '—') + (q9 === 'Oui' && q9d ? ' (' + q9d + ')' : ''));
+    lines.push('10. Varices / phlebites / ecchymoses recentes : ' + (q10 || '—') + (q10 === 'Oui' && q10d ? ' (' + q10d + ')' : ''));
+    lines.push('11. Zones a ne pas toucher : ' + (val('q11') || '—'));
+    lines.push('12. Contact d\'urgence : ' + (val('q12') || '—'));
+    lines.push('');
+    lines.push('Informations confirmees exactes ; le shiatsu ne remplace pas un avis medical.');
+    return lines.join('\n');
+  }
+
+  function validate() {
+    var name = val('f-name');
+    var consent = document.getElementById('consent').checked;
+    if (!name) return 'Merci d\'indiquer votre nom avant d\'envoyer.';
+    if (!consent) return 'Merci de confirmer la case de consentement avant d\'envoyer.';
+    return '';
+  }
+
+  function showStatus(msg) {
+    if (!msg) { statusEl.hidden = true; return; }
+    statusEl.textContent = msg;
+    statusEl.hidden = false;
+  }
+
+  document.getElementById('send-whatsapp').addEventListener('click', function () {
+    var err = validate();
+    if (err) { showStatus(err); return; }
+    showStatus('');
+    var msg = buildMessage();
+    var url = 'https://wa.me/33751492894?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank');
+  });
+
+  document.getElementById('send-email').addEventListener('click', function () {
+    var err = validate();
+    if (err) { showStatus(err); return; }
+    showStatus('');
+    var msg = buildMessage();
+    var name = val('f-name');
+    var subject = 'Questionnaire sante - ' + (name || 'client');
+    var url = 'mailto:shiatsubyanna@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(msg);
+    window.location.href = url;
+  });
+})();
+</script>
+
+</body></html>
+Once you commit it, let me know and I can verify it's live at `https://github.com/shiatsubyanna/shiatsu-website/blob/main/questionaire.html`.
