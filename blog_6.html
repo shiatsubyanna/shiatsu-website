@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Shiatsu by Anna — Paris 11</title>
+<meta name="description" content="Le blog de Shiatsu by Anna : articles sur le Shiatsu, la médecine traditionnelle chinoise, la moxibustion, les ventouses et le bien-être à Paris 11.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.shiatsubyanna.fr/blog.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog — Shiatsu by Anna">
+<meta property="og:description" content="Articles sur le Shiatsu, la médecine traditionnelle chinoise et le bien-être, par Anna, praticienne à Paris 11.">
+<meta property="og:image" content="https://www.shiatsubyanna.fr/ventouses-photo.jpg">
+<meta property="og:url" content="https://www.shiatsubyanna.fr/blog.html">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink: #22244D;
+    --ink-soft: #4A4C74;
+    --teal: #3FB7B6;
+    --teal-deep: #2C8E8D;
+    --cream: #FBF9F5;
+    --mist: #E9F2F1;
+    --white: #FFFFFF;
+    --line: rgba(34,36,77,0.12);
+    --seal: #A6483B;
+    --maxw: 1120px;
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family: 'Shippori Mincho', serif;
+    color: var(--ink);
+    margin: 0;
+    font-weight: 500;
+  }
+  p{ margin: 0 0 1em 0; max-width: 62ch; }
+  a{ color: inherit; }
+  img{ max-width: 100%; display:block; }
+  .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  /* ---------- Header (matches index.html) ---------- */
+  header{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(251,249,245,0.92);
+    backdrop-filter: saturate(140%) blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content: space-between;
+    padding: 14px 28px; max-width: var(--maxw); margin: 0 auto;
+  }
+  .nav img{ height: 54px; width:auto; }
+  .nav-links{ display:flex; gap: 30px; list-style:none; margin:0; padding:0; }
+  .nav-links a{
+    text-decoration:none; font-size: 0.95rem; color: var(--ink-soft);
+    border-bottom: 1px solid transparent; padding-bottom: 3px;
+    transition: border-color .2s, color .2s;
+  }
+  .nav-links a:hover{ color: var(--ink); border-color: var(--teal); }
+  .nav-links a.current{ color: var(--ink); border-color: var(--seal); }
+  .nav-cta{ background: var(--ink); color: var(--white) !important; padding: 9px 18px; border-radius: 3px; font-size: 0.9rem; }
+  .nav-cta:hover{ background: var(--teal-deep); border-color: transparent !important; }
+  .burger{ display:none; background:none; border:none; cursor:pointer; padding: 6px;}
+  .burger span{ display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; }
+  .lang-toggle{ display:flex; align-items:center; border: 1px solid var(--line); border-radius: 20px; padding: 3px; gap: 2px; margin-left: 8px; }
+  .lang-toggle button{ border:none; background:none; font-family:'Work Sans',sans-serif; font-size: 0.8rem; padding: 5px 12px; border-radius: 16px; cursor:pointer; color: var(--ink-soft); }
+  .lang-toggle button.active{ background: var(--ink); color: var(--white); }
+
+  .lang-en{ display:none; }
+  body.site-en .lang-fr{ display:none; }
+  body.site-en .lang-en{ display:revert; }
+  body.site-en .lang-en.i-block{ display:block; }
+  body.site-en .lang-en.i-inline{ display:inline; }
+
+  @media (max-width: 860px){
+    .nav-links{
+      position:absolute; top: 70px; left:0; right:0; background: var(--cream);
+      flex-direction: column; gap: 0; border-bottom: 1px solid var(--line);
+      max-height: 0; overflow:hidden; transition: max-height .3s ease;
+    }
+    .nav-links.open{ max-height: 400px; }
+    .nav-links li{ border-top: 1px solid var(--line); }
+    .nav-links a{ display:block; padding: 16px 28px; border-bottom:none; }
+    .nav-cta{ margin: 16px 28px; display:inline-block; }
+    .burger{ display:block; }
+  }
+
+  /* ---------- Page head ---------- */
+  .page-head{ padding: 72px 0 20px; }
+  .section-label{ color: var(--teal-deep); font-size: 0.92rem; margin-bottom: 10px; letter-spacing: 0.02em; }
+  .section-label::before{ content: "「"; color: var(--seal); margin-right: 1px; }
+  .section-label::after{ content: "」"; color: var(--seal); margin-left: 1px; }
+  .page-head h1{ font-size: clamp(1.9rem, 3.6vw, 2.6rem); max-width: 16ch; }
+  .page-head p{ margin-top: 16px; color: var(--ink-soft); max-width: 56ch; }
+
+  /* ---------- Post list ---------- */
+  .post-list{ padding: 30px 0 100px; display:flex; flex-direction:column; gap: 28px; }
+  .post-card{
+    display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 34px;
+    background: var(--white); border: 1px solid var(--line); border-radius: 6px;
+    overflow:hidden; text-decoration:none; color: inherit;
+    transition: border-color .2s, transform .2s;
+  }
+  .post-card:hover{ border-color: var(--teal); }
+  .post-thumb{ background-size: cover; background-position:center; min-height: 220px; }
+  .post-body{ padding: 30px 30px 30px 0; display:flex; flex-direction:column; justify-content:center; }
+  .post-date{ font-size: 0.85rem; color: var(--teal-deep); margin-bottom: 8px; }
+  .post-body h2{ font-size: 1.4rem; margin-bottom: 12px; }
+  .post-body p{ color: var(--ink-soft); font-size: 0.98rem; }
+  .post-read{ margin-top: 10px; font-size: 0.92rem; color: var(--ink); border-bottom: 1px solid var(--teal); display:inline-block; width:fit-content; }
+  @media (max-width: 700px){
+    .post-card{ grid-template-columns: 1fr; }
+    .post-thumb{ min-height: 180px; }
+    .post-body{ padding: 24px; }
+  }
+
+  footer{
+    background: var(--ink); color: rgba(251,249,245,0.55);
+    border-top: 1px solid rgba(251,249,245,0.12); padding: 30px 0; font-size: 0.85rem;
+  }
+  .footer-wrap{ display:flex; justify-content: space-between; align-items:center; flex-wrap: wrap; gap: 14px; }
+  .footer-wrap img{ height: 30px; opacity: 0.85; }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--teal); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="index.html"><img src="logo-combined.png" alt="Shiatsu by Anna"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#apropos"><span class="lang-fr">À propos</span><span class="lang-en i-inline">About</span></a></li>
+      <li><a href="index.html#pourquoi"><span class="lang-fr">Pourquoi le Shiatsu</span><span class="lang-en i-inline">Why Shiatsu</span></a></li>
+      <li><a href="index.html#tarifs"><span class="lang-fr">Tarifs</span><span class="lang-en i-inline">Rates</span></a></li>
+      <li><a href="index.html#avis"><span class="lang-fr">Avis</span><span class="lang-en i-inline">Reviews</span></a></li>
+      <li><a href="index.html#faq"><span class="lang-fr">FAQ</span><span class="lang-en i-inline">FAQ</span></a></li>
+      <li><a href="blog.html" class="current">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en i-inline">Book an appointment</span></a></li>
+    </ul>
+    <div class="lang-toggle" role="group" aria-label="Choix de la langue / Language choice">
+      <button type="button" data-lang="fr" class="active" onclick="setLang('fr')">FR</button>
+      <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="wrap page-head">
+  <div class="section-label">Blog</div>
+  <h1><span class="lang-fr">Le blog de Shiatsu by Anna</span><span class="lang-en i-inline">The Shiatsu by Anna blog</span></h1>
+  <p class="lang-fr">Notes sur le Shiatsu, la médecine traditionnelle chinoise et le bien-être — écrites depuis le cabinet du 11e arrondissement.</p>
+  <p class="lang-en i-block">Notes on Shiatsu, traditional Chinese medicine and wellbeing — written from the practice in the 11th arrondissement.</p>
+</div>
+
+<div class="wrap post-list">
+  <a class="post-card" href="blog-shiatsu-menopause.html">
+    <div class="post-thumb" style="background-image:url('menopause-card.jpg');" role="img" aria-label="Shiatsu et Ménopause"></div>
+    <div class="post-body">
+      <div class="post-date">Septembre 2026</div>
+      <h2><span class="lang-fr">Shiatsu et MTC : un soutien naturel pendant la ménopause</span><span class="lang-en i-inline">Shiatsu and TCM: Natural Support Through Menopause</span></h2>
+      <p class="lang-fr">Comment la Médecine Traditionnelle Chinoise comprend la ménopause, et comment le Shiatsu peut vous accompagner pendant cette transition — en complément d'un suivi médical.</p>
+      <p class="lang-en i-block">How Traditional Chinese Medicine understands menopause, and how Shiatsu can support you through this transition — alongside your medical care.</p>
+      <span class="post-read"><span class="lang-fr">Lire l'article</span><span class="lang-en i-inline">Read the article</span></span>
+    </div>
+  </a>
+  <a class="post-card" href="blog-ventouses-moxibustion.html">
+    <div class="post-thumb" style="background-image:url('ventouses-photo.jpg');" role="img" aria-label="Séance de ventouses"></div>
+    <div class="post-body">
+      <div class="post-date">Septembre 2026</div>
+      <h2><span class="lang-fr">Ventouses et Moxibustion : deux alliées ancestrales du Shiatsu</span><span class="lang-en i-inline">Cupping and Moxibustion: Two Ancient Allies of Shiatsu</span></h2>
+      <p class="lang-fr">Deux techniques de la Médecine Traditionnelle Chinoise, simples dans leur geste et profondes dans leurs effets, qui accompagnent souvent une séance de Shiatsu.</p>
+      <p class="lang-en i-block">Two Traditional Chinese Medicine techniques, simple in practice and profound in effect, that often accompany a Shiatsu session.</p>
+      <span class="post-read"><span class="lang-fr">Lire l'article</span><span class="lang-en i-inline">Read the article</span></span>
+    </div>
+  </a>
+</div>
+
+<footer>
+  <div class="wrap footer-wrap">
+    <img src="logo-icon.png" alt="Shiatsu by Anna — praticienne shiatsu Paris 11">
+    <div>© <span id="year"></span> Shiatsu by Anna — Paris 11</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  function setLang(lang){
+    document.body.classList.toggle('site-en', lang === 'en');
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    try { localStorage.setItem('shiatsu-lang', lang); } catch(e){}
+  }
+  try {
+    const saved = localStorage.getItem('shiatsu-lang');
+    if (saved === 'en') setLang('en');
+  } catch(e){}
+</script>
+</body>
+</html>
