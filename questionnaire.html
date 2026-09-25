@@ -293,6 +293,19 @@
       <input type="text" id="f-email" autocomplete="email" placeholder="vous@exemple.com">
     </div>
 
+    <div class="field compact">
+      <label class="simple" for="f-phone">Téléphone portable</label>
+      <input type="tel" id="f-phone" autocomplete="tel" placeholder="06 12 34 56 78">
+    </div>
+
+    <div class="field">
+      <label class="q" for="wa-oui">Acceptez-vous d'être contacté(e) par WhatsApp&nbsp;?</label>
+      <div class="choices pill-group">
+        <input type="radio" name="whatsapp_ok" id="wa-oui" value="Oui"><label class="pill" for="wa-oui">Oui</label>
+        <input type="radio" name="whatsapp_ok" id="wa-non" value="Non"><label class="pill" for="wa-non">Non</label>
+      </div>
+    </div>
+
     <div class="field">
       <label class="q" for="q1-oui"><span class="q-num">1.</span>Avez-vous déjà reçu un traitement de shiatsu auparavant&nbsp;?</label>
       <div class="choices pill-group">
@@ -496,10 +509,14 @@
     var q14 = radioValue('q14');
     var q14d = val('q14-detail-text');
 
+    var waOk = radioValue('whatsapp_ok');
+
     var lines = [];
     lines.push('Questionnaire de sante - Shiatsu by Anna');
     lines.push('Nom : ' + (name || '—'));
     lines.push('E-mail : ' + (val('f-email') || '—'));
+    lines.push('Telephone portable : ' + (val('f-phone') || '—'));
+    lines.push('Contact WhatsApp OK : ' + (waOk || '—'));
     lines.push('Date : ' + date);
     lines.push('');
     lines.push('1. Deja recu un shiatsu : ' + (q1 || '—'));
