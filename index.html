@@ -714,6 +714,42 @@
     from{ opacity:0; transform: translateY(14px); }
     to{ opacity:1; transform: translateY(0); }
   }
+  /* ---------- Blog preview ---------- */
+  .blog-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 8px;
+  }
+  .blog-card{
+    display:flex;
+    flex-direction:column;
+    text-decoration:none;
+    color: inherit;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow:hidden;
+    transition: border-color .2s, transform .2s;
+  }
+  .blog-card:hover{ border-color: var(--teal); transform: translateY(-3px); }
+  .blog-thumb{
+    aspect-ratio: 4/3;
+    background-size:cover;
+    background-position:center;
+  }
+  .blog-card-body{
+    padding: 22px 24px 26px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .blog-card h3{ font-size: 1.12rem; margin-bottom: 10px; }
+  .blog-card p{ color: var(--ink-soft); font-size: 0.94rem; flex:1; }
+  .blog-read{ margin-top: 14px; font-size: 0.9rem; color: var(--ink); border-bottom: 1px solid var(--teal); display:inline-block; width:fit-content; }
+  .blog-more{ margin-top: 36px; text-align:center; }
+  @media (max-width: 860px){ .blog-grid{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px){ .blog-grid{ grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -1069,6 +1105,48 @@
         <p class="lang-en i-block">Please give at least 48 hours' notice if you need to cancel, by phone, WhatsApp, or email.</p>
       </details>
 
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section id="blog-preview">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label"><span class="lang-fr">Blog</span><span class="lang-en i-inline">Blog</span></div>
+      <h2><span class="lang-fr">Articles sur le Shiatsu</span><span class="lang-en i-inline">Articles on Shiatsu</span></h2>
+    </div>
+    <div class="blog-grid">
+      <a class="blog-card" href="blog-shiatsu-automne.html">
+        <div class="blog-thumb" style="background-image:url('automne-card.jpg');" role="img" aria-label="Automne et médecine chinoise"></div>
+        <div class="blog-card-body">
+          <h3><span class="lang-fr">Du Père Lachaise à l'automne : ce que la médecine chinoise nous apprend sur cette saison</span><span class="lang-en i-inline">From Père Lachaise to Autumn: What Chinese Medicine Teaches Us About This Season</span></h3>
+          <p class="lang-fr">Immunité, émotions et lâcher-prise : ce que la Médecine Traditionnelle Chinoise nous enseigne sur la transition de l'été vers l'automne.</p>
+          <p class="lang-en i-block">Immunity, emotions and letting go: what Traditional Chinese Medicine teaches us about the shift from summer to autumn.</p>
+          <span class="blog-read"><span class="lang-fr">Lire la suite →</span><span class="lang-en i-inline">Read more →</span></span>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-shiatsu-menopause.html">
+        <div class="blog-thumb" style="background-image:url('menopause-card.jpg');" role="img" aria-label="Shiatsu et Ménopause"></div>
+        <div class="blog-card-body">
+          <h3><span class="lang-fr">Shiatsu et MTC : un soutien naturel pendant la ménopause</span><span class="lang-en i-inline">Shiatsu and TCM: Natural Support Through Menopause</span></h3>
+          <p class="lang-fr">Comment la Médecine Traditionnelle Chinoise comprend la ménopause, et comment le Shiatsu peut vous accompagner pendant cette transition.</p>
+          <p class="lang-en i-block">How Traditional Chinese Medicine understands menopause, and how Shiatsu can support you through this transition.</p>
+          <span class="blog-read"><span class="lang-fr">Lire la suite →</span><span class="lang-en i-inline">Read more →</span></span>
+        </div>
+      </a>
+      <a class="blog-card" href="blog-ventouses-moxibustion.html">
+        <div class="blog-thumb" style="background-image:url('ventouses-photo.jpg');" role="img" aria-label="Séance de ventouses"></div>
+        <div class="blog-card-body">
+          <h3><span class="lang-fr">Ventouses et Moxibustion : deux alliées ancestrales du Shiatsu</span><span class="lang-en i-inline">Cupping and Moxibustion: Two Ancient Allies of Shiatsu</span></h3>
+          <p class="lang-fr">Deux techniques de la Médecine Traditionnelle Chinoise, simples dans leur geste et profondes dans leurs effets.</p>
+          <p class="lang-en i-block">Two Traditional Chinese Medicine techniques, simple in practice and profound in effect.</p>
+          <span class="blog-read"><span class="lang-fr">Lire la suite →</span><span class="lang-en i-inline">Read more →</span></span>
+        </div>
+      </a>
+    </div>
+    <div class="blog-more">
+      <a class="inline-link" href="blog.html"><span class="lang-fr">Voir tous les articles →</span><span class="lang-en i-inline">View all articles →</span></a>
     </div>
   </div>
 </section>
