@@ -193,10 +193,11 @@
   header::before{
     content:"";
     position:absolute;
-    top:0; left:0; right:0; bottom:-1px;
+    top:0; left:0; right:0; bottom:-8px;
     z-index:-1;
     background: rgba(251,249,245,0.92);
     backdrop-filter: saturate(140%) blur(6px);
+    transform: translateZ(0);
   }
   .nav{
     display:flex;
@@ -325,7 +326,7 @@
     }
     .nav img{ height: 46px; }
     .nav{ padding: 10px 20px; }
-    .nav-links.open{ max-height: 480px; }
+    .nav-links.open{ max-height: 600px; }
     .nav-links li{ border-top: 1px solid var(--line); }
     .nav-links a{ display:block; padding: 16px 28px; border-bottom:none; }
     .nav-cta{ margin: 16px 28px; display:inline-block; }
