@@ -312,14 +312,13 @@
       background: var(--cream);
       flex-direction: column;
       gap: 0;
-      border-bottom: 1px solid var(--line);
       max-height: 0;
       overflow:hidden;
       transition: max-height .3s ease;
     }
     .nav img{ height: 46px; }
     .nav{ padding: 10px 20px; }
-    .nav-links.open{ max-height: 600px; }
+    .nav-links.open{ max-height: 600px; border-bottom: 1px solid var(--line); }
     .nav-links li{ border-top: 1px solid var(--line); }
     .nav-links a{ display:block; padding: 16px 28px; border-bottom:none; }
     .nav-cta{ margin: 16px 28px; display:inline-block; }
