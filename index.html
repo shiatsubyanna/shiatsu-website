@@ -300,6 +300,31 @@
   }
   .gallery-track::-webkit-scrollbar{ height:6px; }
   .gallery-track::-webkit-scrollbar-thumb{ background: rgba(251,249,245,0.25); }
+  .gallery-track-wrap{ position:relative; }
+  .gallery-nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:none;
+    background:var(--teal);
+    color:var(--ink);
+    font-size:1.5rem;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:2;
+    box-shadow:0 2px 10px rgba(0,0,0,0.25);
+    transition:background .2s;
+  }
+  .gallery-nav:hover{ background:var(--teal-deep); }
+  .gallery-prev{ left:12px; }
+  .gallery-next{ right:12px; }
+  @media (max-width:640px){ .gallery-nav{ display:none; } }
   @media (max-width: 860px){
     .gallery-section{ padding: 64px 0; }
     .gallery-track img{ height: 300px; }
@@ -1104,6 +1129,7 @@
     
     <h2><span class="lang-fr">Un aperçu des séances</span><span class="lang-en i-inline">A look inside a session</span></h2>
   </div>
+  <div class="gallery-track-wrap">
   <div class="gallery-track">
            <img loading="lazy" decoding="async" src="gallery-07.jpg" alt="Étirement complet des jambes pendant une séance de Shiatsu">
            <img loading="lazy" decoding="async" src="gallery-05.jpg" alt="Pression des mains sur le dos, moment de relâchement pendant une séance de Shiatsu">
@@ -1121,6 +1147,9 @@
            <img loading="lazy" decoding="async" src="gallery-06.jpg" alt="Séance de Shiatsu dans le cabinet de Paris 11, ambiance chaleureuse">
            <img loading="lazy" decoding="async" src="gallery-01.jpg" alt="Détail d'une séance de Shiatsu — pression sur le pied, cabinet de Paris 11">
          </div>
+  <button class="gallery-nav gallery-prev" type="button" aria-label="Previous photos" onclick="document.querySelector('.gallery-track').scrollBy({left:-600,behavior:'smooth'})">‹</button>
+  <button class="gallery-nav gallery-next" type="button" aria-label="Next photos" onclick="document.querySelector('.gallery-track').scrollBy({left:600,behavior:'smooth'})">›</button>
+  </div>
 </section>
 
 <section id="avis" style="background:var(--mist);">
